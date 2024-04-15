@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Contact Me</h1>
+    <p>Feel free to reach out to me using the following. I will respond within 24-48 hours once I receive the message. You can also submit a contact form, and I will also respond within 24-48 hours as well.</p>
+  
+    <h2>Contact Information</h2>
+    <p>Email: {{ email }}</p>
+    <p>Phone: {{ phone_num }}</p>
+  
+    <h2>Social Media</h2>
+    <ul>
+      {% for platform, link in social_media.items %}
+        <li><a href="{{ link }}">{{ platform|title }}</a></li>
+      {% endfor %}
+    </ul>
+  
+    <form method="post" action="{% url 'contact' %}">
+      {% csrf_token %}
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name">
+  
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+  
+      <label for="message">Message</label>
+      <textarea id="message" name="message"></textarea>
+  
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+  

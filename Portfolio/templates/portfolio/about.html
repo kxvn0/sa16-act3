@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>About Me</h1>
+    <p>{{ bio }}</p>
+
+    <h2>Education</h2>
+    <p>{{ education }}</p>
+
+    <h2>Skills</h2>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+</div>
